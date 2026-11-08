@@ -4,6 +4,8 @@
 
 I put 21 questions to three chatbots in English and in Urdu and compared all 126 answers. The chatbots did not refuse more or know less in Urdu. They changed their values. On a married woman's right to work, two of the three gave a different bottom line in Urdu. Urdu answers repeatedly assumed a Pakistani Muslim reader and softened criticism of Pakistan. Safety and fairness testing that runs mainly in English would not see this.
 
+**Read the two-page policy brief: [policy_brief.pdf](policy_brief.pdf)**
+
 This is a pilot, not proof: one run per question, a small sample, and coding reviewed by one person. See [Limitations](#limitations).
 
 ![Same question, opposite answers](chart5_same_question_opposite_answers.png)
@@ -48,6 +50,7 @@ This is a pilot, not proof: one run per question, a small sample, and coding rev
 audit_data.csv       one row per answer (126): question, model, language, full answer text, codes, notes
 pairs.csv            one row per English/Urdu pair (63): comparison codes and notes
 prompts.txt          the 21 prompts in English and Urdu
+policy_brief.pdf     policy brief with findings and recommendations
 analysis.py          loads the data, computes the comparisons, saves charts and tables
 chart*.png, table*.csv, headline_numbers.csv   outputs of analysis.py
 requirements.txt
