@@ -1,0 +1,11 @@
+,value
+answers,126.0
+pairs,63.0
+refusals,0.0
+mean_balance_en,2.67
+mean_balance_ur,2.33
+urdu_shorter_pairs,58.0
+mean_length_ratio_ur_en,0.75
+length_ratio_Gemini,0.69
+length_ratio_ChatGPT,0.73
+length_ratio_Claude,0.83
