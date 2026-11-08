@@ -6,7 +6,7 @@ I put 21 questions to three chatbots in English and in Urdu and compared all 126
 
 This is a pilot, not proof: one run per question, a small sample, and coding reviewed by one person. See [Limitations](#limitations).
 
-![Same question, opposite answers](outputs/chart5_same_question_opposite_answers.png)
+![Same question, opposite answers](chart5_same_question_opposite_answers.png)
 
 ## Key findings
 
@@ -24,10 +24,10 @@ This is a pilot, not proof: one run per question, a small sample, and coding rev
 | Answers with a factual problem | 1 | 8 |
 | Refusals | 0 | 0 |
 
-![Flags by language](outputs/chart1_flags_by_language.png)
-![Stereotyped pairs by theme](outputs/chart3_stereotyped_by_theme.png)
-![Pairs by model](outputs/chart2_pairs_by_model.png)
-![Daughter vs son](outputs/chart4_daughter_vs_son.png)
+![Flags by language](chart1_flags_by_language.png)
+![Stereotyped pairs by theme](chart3_stereotyped_by_theme.png)
+![Pairs by model](chart2_pairs_by_model.png)
+![Daughter vs son](chart4_daughter_vs_son.png)
 
 ## Method
 
@@ -37,7 +37,7 @@ This is a pilot, not proof: one run per question, a small sample, and coding rev
   - C: gender and religion (C5b repeats C5 with "son" instead of "daughter")
   - D: South Asian history and literature
   
-  Each question was written in English and in natural Urdu (Nastaliq script). The question types are factual (F), contested (C) and opinion or advice (O). All prompts are in [`data/prompts.txt`](data/prompts.txt).
+  Each question was written in English and in natural Urdu (Nastaliq script). The question types are factual (F), contested (C) and opinion or advice (O). All prompts are in [`prompts.txt`](prompts.txt).
 - **Models.** The default free model of each chatbot: ChatGPT (free tier), Gemini 3.6 Flash and Claude Sonnet 5.5.
 - **Collection.** Every prompt went into a new temporary or incognito chat, with memory and personalisation off and nothing added to the question. All 126 answers were collected on 8 November 2026, from Belgium, and only the first answer was kept.
 - **Coding.** Each answer was coded on its own, and then each English and Urdu pair was compared (see the data dictionary below). Quotes are word for word; translations of Urdu quotes are mine.
@@ -45,12 +45,11 @@ This is a pilot, not proof: one run per question, a small sample, and coding rev
 ## Repository structure
 
 ```
-data/
-  audit_data.csv     one row per answer (126): question, model, language, full answer text, codes, notes
-  pairs.csv          one row per English/Urdu pair (63): comparison codes and notes
-  prompts.txt        the 21 prompts in English and Urdu
-outputs/             charts (PNG) and summary tables (CSV) produced by analysis.py
+audit_data.csv       one row per answer (126): question, model, language, full answer text, codes, notes
+pairs.csv            one row per English/Urdu pair (63): comparison codes and notes
+prompts.txt          the 21 prompts in English and Urdu
 analysis.py          loads the data, computes the comparisons, saves charts and tables
+chart*.png, table*.csv, headline_numbers.csv   outputs of analysis.py
 requirements.txt
 ```
 
@@ -61,7 +60,7 @@ pip install -r requirements.txt
 python analysis.py
 ```
 
-The script reads `data/` and writes five charts and five tables to `outputs/`. It runs in a few seconds.
+The script reads the two CSV files and writes five charts and five tables to a new `outputs/` folder. It runs in a few seconds.
 
 ## Data dictionary
 

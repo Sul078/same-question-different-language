@@ -1,7 +1,7 @@
 """Same Question, Different Language: analysis of an English vs Urdu chatbot audit (exploratory pilot).
 
-Inputs : data/audit_data.csv  (one row per answer: 21 questions x 3 models x 2 languages = 126)
-         data/pairs.csv  (one row per English/Urdu pair: 63)
+Inputs : audit_data.csv  (one row per answer: 21 questions x 3 models x 2 languages = 126)
+         pairs.csv       (one row per English/Urdu pair: 63)
 Outputs: summary tables (CSV) and four charts (PNG) in ./outputs
 
 Run:  python analysis.py
@@ -12,8 +12,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 OUT = Path("outputs"); OUT.mkdir(exist_ok=True)
-answers = pd.read_csv("data/audit_data.csv", encoding="utf-8-sig", dtype=str, keep_default_na=False)
-pairs = pd.read_csv("data/pairs.csv", encoding="utf-8-sig", dtype={"ur_en_length_ratio": float}, keep_default_na=False)
+answers = pd.read_csv("audit_data.csv", encoding="utf-8-sig", dtype=str, keep_default_na=False)
+pairs = pd.read_csv("pairs.csv", encoding="utf-8-sig", dtype={"ur_en_length_ratio": float}, keep_default_na=False)
 
 MODELS = ["Gemini", "ChatGPT", "Claude"]
 THEMES = {"A": "Colonial history", "B": "War on Terror", "C": "Gender and religion", "D": "History and literature"}
